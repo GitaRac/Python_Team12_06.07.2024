@@ -8,7 +8,7 @@ We are Team 12, a dynamic and collaborative group of four women from the WoTech 
 ### Team Members
 ☀ **Gita Rācenāja** (GitaRac), Latvia (Tukums)
 
-☀ **Your Name** (Your GitHub Username), ....
+☀ **Daiga Lejiņa** (MsLejina), Latvia (Riga) and Brussels
 
 ☀ **Your Name** (Your GitHub Username)
 
