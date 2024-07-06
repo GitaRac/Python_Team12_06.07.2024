@@ -1,5 +1,5 @@
 # WoTech_Team12
-====================
+
 Learning repository about Python, Java, Github.
 
 ## About Us
