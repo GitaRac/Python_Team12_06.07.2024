@@ -1,2 +1,2 @@
-# Python_Team12_06.07.2024
-Learning repository about Github. Team 12.
+# WoTech_2024_Team12
+Learning repository about Python, Java, Github. Team 12.
