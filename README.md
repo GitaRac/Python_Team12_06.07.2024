@@ -6,7 +6,7 @@ Learning repository about Python, Java, Github.
 We are Team 12, a collaborative team of 4 WoTech students/ladies.
 
 ### Team Members
-* **Gita Rācenāja** (GitaRac)
+* **Gita Rācenāja** (GitaRac), LV
 * **Your Name** (Your GitHub Username)
 * **Your Name** (Your GitHub Username)
 * **Your Name** (Your GitHub Username)
