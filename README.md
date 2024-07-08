@@ -12,7 +12,7 @@ We are Team 12, a dynamic and collaborative group of four women from the WoTech 
 
 ☀ **Heili Roos** (heiliroos), Estonia (Haapsalu)
 
-☀ **Your Name** (Your GitHub Username)
+☀ **Christin Algo** (cchristinalgo), Estonia (Viljandi)
 
 ## Communication
 We use Discord to collaborate and discuss WoTech learning realated topics.
