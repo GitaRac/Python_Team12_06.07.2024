@@ -17,7 +17,7 @@ We are Team 12, a dynamic and collaborative group of four women from the WoTech 
 ## Communication
 We use Discord to collaborate and discuss WoTech learning realated topics.
 
-#Git & GitHub
+# Git & GitHub
 
 [GitHub - push, pull, commit, add code.pdf](https://github.com/user-attachments/files/16177869/GitHub.-.push.pull.commit.add.code.pdf)
 
