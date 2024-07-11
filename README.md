@@ -21,5 +21,8 @@ We use Discord to collaborate and discuss WoTech learning realated topics.
 
 [GitHub - push, pull, commit, add code.pdf](https://github.com/user-attachments/files/16177869/GitHub.-.push.pull.commit.add.code.pdf)
 
+# Java Teamwork **11.07.2024. API endpoints**
+
+
 
 
