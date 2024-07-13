@@ -22,6 +22,9 @@ We use Discord to collaborate and discuss WoTech learning realated topics.
 
 [GitHub - push, pull, commit, add code.pdf](https://github.com/user-attachments/files/16177869/GitHub.-.push.pull.commit.add.code.pdf)
 
+https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request
+
+
 ## Java **API endpoints** 11.07.2024.
 InteliiJ:
 ```java
