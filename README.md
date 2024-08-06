@@ -92,8 +92,13 @@ public class DatoriumApiApplication {
 	}
 }
 ```
-	http://localhost:8080/sum?number1=17&number2=13
+	http://localhost:8080/ping
+ 	http://localhost:8080/hello
+	http://localhost:8080/hello?name=Gita
+
+ 	http://localhost:8080/sum?number1=17&number2=13
 	http://localhost:8080/multiply?number1=100&number2=13
+ 
 	http://localhost:8080/team12
 	http://localhost:8080/team12/member?index=2
 	http://localhost:8080/mycats
