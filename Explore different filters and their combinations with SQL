@@ -1,0 +1,4 @@
+You can find Uniqe Pet kinds. And there are birds in the Database.
+```sql
+SELECT DISTINCT Kind FROM Pets
+```
