@@ -1,4 +1,79 @@
+To explore different filters and their combinations using SQL with the provided pet clinic data files, we need to first understand the structure of these files. I will load and inspect the contents of each file to identify the available fields (columns) and then suggest possible filters that can be applied.
+
+I'll start by reading and displaying a few rows from each of the files: Owners.csv, Pets.csv, Procedures.csv, and Sales.csv.
+
+Summary of Data Files:
+
+1. Owners.csv:
+
+Columns: OwnerID, Name, Surname, StreetAddress, City, State, StateFull, ZipCode
+Sample Filters:
+Filter by city or state (e.g., all owners in Michigan).
+Filter by owner's name or surname.
+Filter by zip code.
+
+2. Pets.csv:
+
+Columns: PetID, Name, Kind, Sex, Age, OwnerID
+Sample Filters:
+Filter by pet kind (e.g., all dogs or cats).
+Filter by pet's age (e.g., pets older than 5 years).
+Filter by pet's sex (e.g., all male pets).
+Filter by specific owner (using OwnerID).
+
+3. Procedures.csv:
+
+Columns: ProcedureCode, ProcedureType, ProcedureSubCode, Description, Price
+Sample Filters:
+Filter by procedure type (e.g., grooming, vaccinations).
+Filter by price range (e.g., procedures costing more than $50).
+Filter by specific procedure description.
+
+4. Sales.csv:
+
+Columns: TransactionID, Country, PetID, Date, ProcedureCode
+Sample Filters:
+Filter by country.
+Filter by date (e.g., transactions within a certain year).
+Filter by specific procedure (using ProcedureCode).
+Filter by specific pet (using PetID).
+
+5. Potential SQL Filters and Combinations:
+
+Combining Filters Across Tables:
+Filter pets by their kind and list all corresponding procedures.
+Filter transactions by date and list all pets and owners involved.
+Filter procedures by type and list all associated sales and pets.
+
+EXAMPLES:
+
 You can find Uniqe Pet kinds. And there are birds in the Database.
-```sql
 SELECT DISTINCT Kind FROM Pets
-```
+
+The number of owners
+SELECT COUNT(*) FROM Owners;
+
+Get the top 5 owners with the most pets: 
+SELECT o.Name, COUNT(p.PetID) AS PetCount FROM Owners o JOIN Pets p ON o.OwnerID = p.OwnerID GROUP BY o.Name ORDER BY PetCount DESC LIMIT 5;
+
+Top 5 most expensive procedures 
+SELECT Description, Price
+FROM Procedures
+ORDER BY Price DESC
+LIMIT 5;
+
+Find Male Birds that are between 1  and 3 years old 
+SELECT * FROM Pets WHERE Sex = 'male'AND Kind = 'Bird' AND Age BETWEEN 1 AND 3;
+
+List All Dogs and Their Owners in Michigan
+SELECT p.Name AS PetName, o.Name AS OwnerName, o.Surname, o.City, o.State
+FROM Pets p
+JOIN Owners o ON p.OwnerID = o.OwnerID
+WHERE p.Kind = 'Dog' AND o.State = 'MI';
+
+Find All Procedures for Cats Older Than 5 Years
+SELECT p.Name AS PetName, pr.Description, pr.Price
+FROM Pets p
+JOIN Sales s ON p.PetID = s.PetID
+JOIN Procedures pr ON s.ProcedureCode = pr.ProcedureCode
+WHERE p.Kind = 'Cat' AND p.Age > 5;
