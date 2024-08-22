@@ -66,3 +66,70 @@ Filter pets by their kind and list all corresponding procedures.
 Filter transactions by date and list all pets and owners involved.
 Filter procedures by type and list all associated sales and pets.
 
+SQLite offers several filtering options that can be used in SQL queries to select specific data from tables based on certain criteria. Here’s an overview of the main filtering options available:
+
+1. WHERE Clause
+The WHERE clause is used to filter records that meet certain conditions. It supports various comparison operators like =, !=, >, <, >=, <=, IN, LIKE, BETWEEN, and more.
+Example:
+SELECT * FROM employees WHERE age > 30;
+
+2. AND and OR
+These logical operators are used within the WHERE clause to combine multiple conditions.
+Example:
+SELECT * FROM employees WHERE age > 30 AND department = 'Sales';
+
+3. IN Operator
+The IN operator is used to filter records where a value matches any value in a list.
+Example:
+SELECT * FROM employees WHERE department IN ('Sales', 'Marketing', 'HR');
+
+4. LIKE and GLOB
+LIKE is used for pattern matching, with % representing any sequence of characters and _ representing a single character.
+GLOB is similar to LIKE but uses Unix shell-style wildcards (* for any sequence, ? for a single character).
+Example with LIKE:
+SELECT * FROM employees WHERE name LIKE 'A%';
+
+Example with GLOB:
+SELECT * FROM employees WHERE name GLOB 'A*';
+
+5. BETWEEN
+The BETWEEN operator filters data within a certain range, including the boundaries.
+Example:
+SELECT * FROM employees WHERE age BETWEEN 25 AND 35;
+
+6. IS NULL and IS NOT NULL
+These are used to filter records with NULL or non-NULL values.
+Example:
+SELECT * FROM employees WHERE manager_id IS NULL;
+
+7. DISTINCT
+This keyword is used to return only distinct (different) values, often combined with other filtering options.
+Example:
+SELECT DISTINCT department FROM employees;
+
+8. LIMIT and OFFSET
+LIMIT is used to restrict the number of rows returned, and OFFSET specifies the number of rows to skip before starting to return rows.
+Example:
+SELECT * FROM employees LIMIT 10 OFFSET 5;
+
+9. ORDER BY
+Although primarily for sorting, the ORDER BY clause can indirectly filter data by ordering it and then using LIMIT.
+Example:
+SELECT * FROM employees ORDER BY salary DESC LIMIT 5;
+
+10. EXISTS
+The EXISTS operator is used to test for the existence of any record in a subquery.
+Example:
+SELECT * FROM employees WHERE EXISTS (SELECT 1 FROM departments WHERE departments.id = employees.department_id);
+
+11. Subqueries
+Subqueries (or nested queries) can be used in the WHERE clause or FROM clause to filter results based on complex criteria.
+Example:
+SELECT * FROM employees WHERE salary > (SELECT AVG(salary) FROM employees);
+
+12. GROUP BY and HAVING
+GROUP BY is used to group rows that have the same values in specified columns into summary rows, often used with aggregate functions.
+HAVING is used to filter records after the GROUP BY operation.
+Example:
+SELECT department, COUNT(*) FROM employees GROUP BY department HAVING COUNT(*) > 5;
+These options allow for highly flexible and powerful data retrieval in SQLite, enabling users to tailor their queries to meet specific data extraction needs.
