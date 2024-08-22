@@ -1,3 +1,24 @@
+EXAMPLES:
+
+You can find Uniqe Pet kinds. And there are birds in the Database.
+SELECT DISTINCT Kind FROM Pets
+
+The number of owners
+SELECT COUNT(*) FROM Owners;
+
+Get the top 5 owners with the most pets: 
+SELECT o.Name, COUNT(p.PetID) AS PetCount FROM Owners o JOIN Pets p ON o.OwnerID = p.OwnerID GROUP BY o.Name ORDER BY PetCount DESC LIMIT 5;
+
+Top 5 most expensive procedures 
+SELECT Description, Price
+FROM Procedures
+ORDER BY Price DESC
+LIMIT 5;
+
+Find Male Birds that are between 1  and 3 years old 
+SELECT * FROM Pets WHERE Sex = 'male'AND Kind = 'Bird' AND Age BETWEEN 1 AND 3;
+
+FROM CHATGPT:
 To explore different filters and their combinations using SQL with the provided pet clinic data files, we need to first understand the structure of these files. I will load and inspect the contents of each file to identify the available fields (columns) and then suggest possible filters that can be applied.
 
 I'll start by reading and displaying a few rows from each of the files: Owners.csv, Pets.csv, Procedures.csv, and Sales.csv.
@@ -44,25 +65,4 @@ Combining Filters Across Tables:
 Filter pets by their kind and list all corresponding procedures.
 Filter transactions by date and list all pets and owners involved.
 Filter procedures by type and list all associated sales and pets.
-
-EXAMPLES:
-
-You can find Uniqe Pet kinds. And there are birds in the Database.
-SELECT DISTINCT Kind FROM Pets
-
-The number of owners
-SELECT COUNT(*) FROM Owners;
-
-Get the top 5 owners with the most pets: 
-SELECT o.Name, COUNT(p.PetID) AS PetCount FROM Owners o JOIN Pets p ON o.OwnerID = p.OwnerID GROUP BY o.Name ORDER BY PetCount DESC LIMIT 5;
-
-Top 5 most expensive procedures 
-SELECT Description, Price
-FROM Procedures
-ORDER BY Price DESC
-LIMIT 5;
-
-Find Male Birds that are between 1  and 3 years old 
-SELECT * FROM Pets WHERE Sex = 'male'AND Kind = 'Bird' AND Age BETWEEN 1 AND 3;
-
 
