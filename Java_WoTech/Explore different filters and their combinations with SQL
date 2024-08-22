@@ -65,15 +65,4 @@ LIMIT 5;
 Find Male Birds that are between 1  and 3 years old 
 SELECT * FROM Pets WHERE Sex = 'male'AND Kind = 'Bird' AND Age BETWEEN 1 AND 3;
 
-List All Dogs and Their Owners in Michigan
-SELECT p.Name AS PetName, o.Name AS OwnerName, o.Surname, o.City, o.State
-FROM Pets p
-JOIN Owners o ON p.OwnerID = o.OwnerID
-WHERE p.Kind = 'Dog' AND o.State = 'MI';
 
-Find All Procedures for Cats Older Than 5 Years
-SELECT p.Name AS PetName, pr.Description, pr.Price
-FROM Pets p
-JOIN Sales s ON p.PetID = s.PetID
-JOIN Procedures pr ON s.ProcedureCode = pr.ProcedureCode
-WHERE p.Kind = 'Cat' AND p.Age > 5;
