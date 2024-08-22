@@ -1,0 +1,73 @@
+Calculate total Sales by City
+Calculate total Sales by Pet Kind
+Calculate total Sales by City and Pet Kind
+Calculate Average sales by City
+If you have additional time, explore relationships with SQLight
+
+
+1.
+SELECT 
+    Owners.City, 
+    SUM(Procedures.Price) AS TotalSales
+FROM 
+    Sales
+    LEFT JOIN Pets ON Sales.PetID = Pets.PetID
+    LEFT JOIN Owners ON Pets.OwnerID = Owners.OwnerID
+    LEFT JOIN Procedures ON Sales.ProcedureCode = Procedures.ProcedureCode
+GROUP BY 
+    Owners.City
+ORDER BY 
+    TotalSales DESC;
+2. 
+SELECT 
+    Pets.Kind, 
+    SUM(Procedures.Price) AS TotalSales
+FROM 
+    Sales
+    LEFT JOIN Pets ON Sales.PetID = Pets.PetID
+    LEFT JOIN Procedures ON Sales.ProcedureCode = Procedures.ProcedureCode
+GROUP BY 
+    Pets.Kind
+ORDER BY 
+    TotalSales DESC;
+3.
+SELECT 
+    Owners.City, 
+    Pets.Kind, 
+    SUM(Procedures.Price) AS TotalSales
+FROM 
+    Sales
+    LEFT JOIN Pets ON Sales.PetID = Pets.PetID
+    LEFT JOIN Owners ON Pets.OwnerID = Owners.OwnerID
+    LEFT JOIN Procedures ON Sales.ProcedureCode = Procedures.ProcedureCode
+GROUP BY 
+    Owners.City, 
+    Pets.Kind
+ORDER BY 
+    TotalSales DESC;
+4.
+SELECT 
+    Owners.City, 
+    AVG(Procedures.Price) AS AverageSales
+FROM 
+    Sales
+    LEFT JOIN Pets ON Sales.PetID = Pets.PetID
+    LEFT JOIN Owners ON Pets.OwnerID = Owners.OwnerID
+    LEFT JOIN Procedures ON Sales.ProcedureCode = Procedures.ProcedureCode
+GROUP BY 
+    Owners.City
+ORDER BY 
+    AverageSales DESC;
+
+1. Total Sales by City
+What we did: We counted how much money was made in each city.
+How: We looked at where each pet lives and added up all the prices for what they had done at the vet.
+2. Total Sales by Pet Kind
+What we did: We counted how much money was made for each type of pet (like dogs or cats).
+How: We found out what kind of pet had each procedure and added up the prices.
+3. Total Sales by City and Pet Kind
+What we did: We counted how much money was made for each type of pet in each city.
+How: We checked which pets live in each city and added up the prices for each kind of pet.
+4. Average Sales by City
+What we did: We found out how much money was made on average in each city.
+How: We added up all the sales in a city and then figured out the average amount.
